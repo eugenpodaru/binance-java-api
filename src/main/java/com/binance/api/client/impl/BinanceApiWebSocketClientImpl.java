@@ -13,7 +13,10 @@ import okhttp3.WebSocket;
 import java.io.Closeable;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
+
+import static com.binance.api.client.impl.BinanceApiServiceGenerator.getSharedClient;
 
 /**
  * Binance API WebSocket client implementation using OkHttp.
@@ -22,8 +25,8 @@ public class BinanceApiWebSocketClientImpl implements BinanceApiWebSocketClient,
 
     private final OkHttpClient client;
 
-    public BinanceApiWebSocketClientImpl(OkHttpClient client) {
-        this.client = client;
+    public BinanceApiWebSocketClientImpl() {
+        this.client = getSharedClient().newBuilder().pingInterval(3, TimeUnit.MINUTES).build();
     }
 
     @Override

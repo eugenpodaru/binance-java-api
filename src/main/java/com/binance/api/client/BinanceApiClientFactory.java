@@ -2,10 +2,6 @@ package com.binance.api.client;
 
 import com.binance.api.client.impl.*;
 
-import java.util.concurrent.TimeUnit;
-
-import static com.binance.api.client.impl.BinanceApiServiceGenerator.getSharedClient;
-
 /**
  * A factory for creating BinanceApi client objects.
  */
@@ -84,7 +80,7 @@ public class BinanceApiClientFactory {
      * Creates a new web socket client used for handling data streams.
      */
     public BinanceApiWebSocketClient newWebSocketClient() {
-        return new BinanceApiWebSocketClientImpl(getSharedClient().newBuilder().pingInterval(3, TimeUnit.MINUTES).build());
+        return new BinanceApiWebSocketClientImpl();
     }
 
     /**
