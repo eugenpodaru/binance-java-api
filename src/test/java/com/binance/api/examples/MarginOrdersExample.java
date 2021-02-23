@@ -38,7 +38,7 @@ public class MarginOrdersExample {
             CancelOrderResponse cancelOrderResponse = client.cancelOrder(new CancelOrderRequest("LINKETH", 756762l));
             System.out.println(cancelOrderResponse);
         } catch (BinanceApiException e) {
-            System.out.println(e.getError().getMsg());
+            System.out.println(e.getError().getMessage());
         }
 
         // Placing a real LIMIT order
