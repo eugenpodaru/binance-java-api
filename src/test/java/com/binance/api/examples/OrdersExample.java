@@ -44,7 +44,7 @@ public class OrdersExample {
       CancelOrderResponse cancelOrderResponse = client.cancelOrder(new CancelOrderRequest("LINKETH", 756762l));
       System.out.println(cancelOrderResponse);
     } catch (BinanceApiException e) {
-      System.out.println(e.getError().getMessage());
+      System.out.println(e.getError().getMsg());
     }
 
     // Placing a test LIMIT order

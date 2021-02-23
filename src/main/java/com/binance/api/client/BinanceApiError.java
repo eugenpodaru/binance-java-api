@@ -14,9 +14,9 @@ public class BinanceApiError {
     private int code;
 
     /**
-     * Error message.
+     * Error msg.
      */
-    private String message;
+    private String msg;
 
     public int getCode() {
         return code;
@@ -26,23 +26,23 @@ public class BinanceApiError {
         this.code = code;
     }
 
-    public String getMessage() {
-        return message;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
-    public String getCodeAndMessage() {
-        return String.format("[%s]:%s", code, message);
+    public String getCodeAndMsg() {
+        return String.format("[%s]:%s", code, msg);
     }
 
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE)
                 .append("code", code)
-                .append("message", message)
+                .append("msg", msg)
                 .toString();
     }
 }

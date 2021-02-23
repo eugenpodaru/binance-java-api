@@ -500,7 +500,7 @@ client.newOrder(limitBuy("LINKETH", TimeInForce.GTC, "1000", "0.0001"), (NewOrde
 
 ### Exception handling
 
-Every API method can potentially throw an unchecked `BinanceApiException` which wraps the error message returned from the Binance API, or an exception, in case the request never properly reached the server.
+Every API method can potentially throw an unchecked `BinanceApiException` which wraps the error msg returned from the Binance API, or an exception, in case the request never properly reached the server.
 
 ```java
 try {

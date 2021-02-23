@@ -51,7 +51,7 @@ public class MarketDataEndpointsExampleAsync {
       client.getOrderBook("UNKNOWN", 10, response -> System.out.println(response));
     } catch (BinanceApiException e) {
       System.out.println(e.getError().getCode()); // -1121
-      System.out.println(e.getError().getMessage());  // Invalid symbol
+      System.out.println(e.getError().getMsg());  // Invalid symbol
     }
   }
 }
